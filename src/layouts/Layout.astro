@@ -5,18 +5,54 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<title>Diffchecker - Compare two texts to see the differences</title>
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
+	* {
+		box-sizing: border-box;
+	}
 	html,
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
+		font-family: monospace;
+		display: flex;
+		min-height: 100dvh;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 14px;
+		color-scheme: dark;
 	}
+
+	.flex {
+		display: flex;
+	}
+
+	.flex-col {
+		flex-direction: column;
+	}
+
+	.items-center {
+		align-items: center;
+	}
+
+	.justify-center {
+		justify-content: center;
+	}
+
+	.justify-between {
+		justify-content: space-between;
+	}
+
+	input[type="radio"],
+	input[type="checkbox"] {
+		margin: 0;
+		accent-color: #fff;
+	}
+	
 </style>
