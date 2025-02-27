@@ -1,6 +1,22 @@
 ---
-const originalText = "La Rocío és andalusa, de Granada, i estudia català per comunicar-se amb el gat. Té vint-i-vuit anys i parla anglès i castellà. La professora es diu Clara, és de València i té trenta-nou anys. Ah, i jo em dic Bianca, tinc quaranta-set anys i parlo italià, anglès i una mica de francès, però això ja ho saps! Petonets!";
-const changedText = "La Rocío és andalusa, de granada, i estudia catala per comunicarse amb el gat. Te vint i vuit anys i parla anglès i castellà. La professora es diu Clara, és de velencia i té trenta-nou anys. Ah, i jo em dic bianca, tinc quaranta-set anys i parlo italià, anglès i una mica de francès, però això ja ho saps! Petonets!";
+const originalText = `
+.btn {
+  border: none;
+  padding: 0.75rem 1.25rem;
+  background-color: red;
+  color: #fff;
+  border-radius: 2.5rem;
+  font-weight: 600;
+}`;
+const changedText = `
+.btn {
+  border: none;
+  padding: 0.75rem 1.5rem;
+  background-color: #111;
+  color: #fefefe;
+  border-radius: 2.75rem;
+  font-weight: 600;
+}`;
 ---
 
 <div class="container">
@@ -33,7 +49,7 @@ const changedText = "La Rocío és andalusa, de granada, i estudia catala per co
     </div>
   </div>
 
-  <h3 class="title">Result</h3>
+  <h3 class="title with-border">Result</h3>
   <div class="options">
     <label>
       Show removals <input type="checkbox" id="show-removed" checked />
@@ -241,6 +257,8 @@ const changedText = "La Rocío és andalusa, de granada, i estudia catala per co
     margin: 3rem auto;
     padding: 0 16px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   textarea,
@@ -260,17 +278,16 @@ const changedText = "La Rocío és andalusa, de granada, i estudia catala per co
 
   .result {
     min-height: 100px;
-    margin: 1.5rem 0 0;
+    margin: 1.75rem 0 0;
   }
 
   .actions {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1rem 0 2.5rem;
+    margin: 2.25rem 0 2.5rem;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    gap: 1.75rem;
   }
 
   .options {
@@ -282,7 +299,7 @@ const changedText = "La Rocío és andalusa, de granada, i estudia catala per co
   }
 
   .compare-button {
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 1.75rem;
     border-radius: 50px;
     background-color: #ffffff;
     color: #000000;
@@ -291,7 +308,6 @@ const changedText = "La Rocío és andalusa, de granada, i estudia catala per co
     font-family: monospace;
     font-weight: 800;
     font-size: 15px;
-    line-height: 1.4;
   }
 
   .boxes {
@@ -307,20 +323,37 @@ const changedText = "La Rocío és andalusa, de granada, i estudia catala per co
   }
 
   .title {
-    margin: 0 0 1.5rem;
     text-transform: uppercase;
     text-align: center;
     font-size: 1.25rem;
+    display: inline-flex;
+    margin: 0 auto 1.5rem;
+    padding-inline: 12px;
+    padding-bottom: 4px;
+    position: relative;
+
+    &.with-border {
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        height: 3px;
+        background: #ffffff;
+        width: 100%;
+        left: 0;
+        border-radius: 6px;
+      }
+    }
   }
 
   label {
     display: flex;
     align-items: center;
     gap: 8px;
-    padding: 6px 8px 6px 10px;
+    padding: 8px 11px 8px 14px;
     background: #ffffff12;
     font-size: 13px;
-    border-radius: 6px;
+    border-radius: 9px;
   }
 </style>
 
